@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using SlackWebhook;
 
 namespace Sigfox_connect_Slack
@@ -13,11 +15,22 @@ namespace Sigfox_connect_Slack
     {
         public static async Task SlackPost(string message)
         {
-            string webHookUrl = "https://hooks.slack.com/services/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";
+            string webHookUrl = getSlackInfo("SlackWebHook");
             await new SlackClient(webHookUrl).SendAsync(b => b
                 .WithUsername("Sigfox Bot")
                 .WithText(message)
             );
+        }
+
+        public static string getSlackInfo(string infoItem)
+        {
+            // Read Sigfox Information
+            using (var sr = new StreamReader(@"../../../SlackInfo.json", Encoding.UTF8))
+            {
+                var sigfoxinfo = JObject.Parse(sr.ReadToEnd());
+
+                return (string)sigfoxinfo[infoItem];
+            }
         }
     }
 }

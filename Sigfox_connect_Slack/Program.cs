@@ -7,9 +7,10 @@ namespace Sigfox_connect_Slack
     {
         static void Main(string[] args)
         {
+            long waitTime = 10000;
             Console.WriteLine("========== Program Start ==========");
-            Console.WriteLine("wait 60sec");
-            Timer timer = new Timer(60000);
+            Console.WriteLine("wait " + (waitTime / 1000) + "sec");
+            Timer timer = new Timer(waitTime);
             timer.Enabled = true;
 
             long beforePushTime = 0;

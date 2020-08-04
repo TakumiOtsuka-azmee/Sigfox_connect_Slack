@@ -342,3 +342,6 @@ healthchecksdb
 # =================================================================== 
 # Sigfox informations
 SigfoxInfo.json
+
+# Slack information
+SlackInfo.json
