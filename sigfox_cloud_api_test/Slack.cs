@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SlackWebhook;
 
-namespace sigfox_cloud_api_test
+namespace Sigfox_connect_Slack
 {
     /// <summary>
     /// Slack bot

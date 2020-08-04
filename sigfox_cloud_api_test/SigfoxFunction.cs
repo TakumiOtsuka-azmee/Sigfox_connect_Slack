@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sigfox_cloud_api_test
+namespace Sigfox_connect_Slack
 {
     class SigfoxFunction
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Timers;
 
-namespace sigfox_cloud_api_test
+namespace Sigfox_connect_Slack
 {
     class Program
     {
